@@ -9,15 +9,15 @@ use rishab\actvity\ActivityLog;
 
 class logController extends Controller
 {
-    public function view($id)
+    public function view(Request $request)
     {
-        $activity = ActivityLog::find($id);
+        $activity = ActivityLog::find($request->id);
         $ip = @$activity->ip_address;
 
         try {
             $xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=" . $ip);
         } catch (\Exception $ex) {
-            $xml = new stdClass();
+            $xml = new \stdClass();
         }
         $activity['ip_country'] = empty($xml) ?  (string) $xml->geoplugin_countryName : '--';
         $activity['ip_city'] = empty($xml) ?  (string) $xml->geoplugin_city : '--';
@@ -30,6 +30,8 @@ class logController extends Controller
 
     public function logs()
     {
+        // return env('header_path');
+
         $activity = ActivityLog::latest()->get();
         return view('log::log', compact('activity'));
     }

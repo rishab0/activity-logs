@@ -1,5 +1,4 @@
-@extends('log::layout.app')
-@section('content')
+
 <style>
     .bold {
         font-weight: bold;
@@ -9,10 +8,6 @@
 </style>
 <div class="container-fluid">
     <main role="main" class="pt-3">
-        <div class="page-header mb-4">
-            <h1>Log [{{@$date}}]</h1>
-        </div>
-
         <div class="row">
 
             <div class="col-lg-3">
@@ -57,6 +52,10 @@
                 <p>{{$activity->ip_long}}</p>
             </div>
             <div class="col-lg-3">
+                <p class="bold">URL</p>
+                <p>{{@$activity->url}}</p>
+            </div>
+            <div class="col-lg-3">
                 <p class="bold">TimeZone</p>
                 <p>{{$activity->timezone}}</p>
             </div>
@@ -67,5 +66,3 @@
         </div>
     </main>
 </div>
-
-@endsection

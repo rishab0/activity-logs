@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="LogViewer">
     <meta name="author" content="ARCANEDEV">
-    <title>LogViewer - Created by ARCANEDEV</title>
+    <title>Activity logs - Created by Softuvo</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -217,8 +217,8 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark p-0">
-        <a href="https://onerealm.site/log-viewer" class="navbar-brand mr-0">
-            <i class="fa fa-fw fa-book"></i> LogViewer
+        <a href="{{url('/activity-log')}}" class="navbar-brand mr-0">
+            <i class="fa fa-fw fa-book"></i> Activity logs
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -226,13 +226,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a href="https://onerealm.site/log-viewer" class="nav-link">
+                    <a href="{{url('/activity-log')}}" class="nav-link">
                         <i class="fa fa-dashboard"></i> Dashboard
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="{{env('APP_URL')}}/logs" class="nav-link">
-                        <i class="fa fa-archive"></i> Logs
                     </a>
                 </li>
             </ul>
@@ -257,9 +252,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
-
-
-
+   
 </body>
 
 </html>

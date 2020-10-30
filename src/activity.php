@@ -11,27 +11,24 @@ class activity extends Eloquent
 
     
 
-    public static function add($msz, $model)
+    public static function add($data)
     {
-        $data['msz'] = $msz;
-        $data['model'] = $model;
-        $data['class'] = 'add';
+        $data['status'] = 'add';
         ActivityLog::add($data);
     }
 
-    // public static function delete($msz, $model)
-    // {
-    //     $data['msz'] = $msz;
-    //     $data['model'] = $model;
-    //     $data['class'] = 'delete';
-    //     ActivityLog::add($data);
-    // }
+    public static function remove($data)
+    {
+        $data['status'] = 'remove';
+        ActivityLog::add($data);
+    }
 
-    // public static function update($msz, $model)
-    // {
-    //     $data['msz'] = $msz;
-    //     $data['model'] = $model;
-    //     $data['class'] = 'update';
-    //     ActivityLog::add($data);
-    // }
+    public static function modified($data)
+    {
+        $data['status'] = 'modified';
+        ActivityLog::add($data);
+
+    }
+
+    
 }

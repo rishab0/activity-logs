@@ -15,19 +15,21 @@ class ActivityLog extends Eloquent
      * @var array
      */
     protected $fillable = [
-        'user', 'model', 'status', 'ip_address','timezone'
+        'user', 'model', 'status', 'ip_address','timezone','url'
     ];
 
     public static function add($data)
     {
         ActivityLog::create([
-            'user' => $data['msz'],
-            'model' => $data['model'],
-            'status' => $data['class'],
+            'user' => @$data['msz'],
+            'model' => @$data['model'],
+            'url' => @$data['url'],
+            'status' => $data['status'],
             'ip_address' => self::get_client_ip(),
             'timezone' => date_default_timezone_get(),
         ]);
     }
+
 
     // Function to get the client IP address
     public static function get_client_ip()
@@ -54,14 +56,14 @@ class ActivityLog extends Eloquent
     {
         switch ($this->status) {
             case 'add':
-                return '<span class="badge badge-primary">Insert</span>';
+                return '<span class="badge badge-success">Insert</span>';
                 break;
 
-            case 'delete':
-                return '<span class="badge badge-primary">Deleted</span>';
+            case 'remove':
+                return '<span class="badge badge-danger">Deleted</span>';
                 break;
 
-            case 'update':
+            case 'modified':
                 return '<span class="badge badge-primary">updated</span>';
                 break;
 
