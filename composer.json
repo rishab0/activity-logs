@@ -1,0 +1,23 @@
+{
+    "name": "rishab/actvity",
+    "description": "activity log for your admin panel",
+    "type": "project",
+    "license": "MIT",
+    "authors": [{
+        "name": "rishab",
+        "email": "rishab.goyal@softuvo.com"
+    }],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "rishab\\actvity\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "rishab\\actvity\\ActivityLogServiceProvider"
+            ]
+        }
+    }
+}
