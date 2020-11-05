@@ -12,27 +12,13 @@ class logController extends Controller
     public function view(Request $request)
     {
         $activity = ActivityLog::find($request->id);
-        $ip = @$activity->ip_address;
-
-        try {
-            $xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=" . $ip);
-        } catch (\Exception $ex) {
-            $xml = new \stdClass();
-        }
-        $activity['ip_country'] = empty($xml) ?  (string) $xml->geoplugin_countryName : '--';
-        $activity['ip_city'] = empty($xml) ?  (string) $xml->geoplugin_city : '--';
-        $activity['ip_region'] = empty($xml) ?  (string) $xml->geoplugin_region : '--';
-        $activity['ip_lat'] = empty($xml) ?  (string) $xml->geoplugin_latitude : '--';
-        $activity['ip_long'] = empty($xml) ?  (string) $xml->geoplugin_longitude : '--';
         return view('log::view', compact('activity'));
     }
 
 
     public function logs()
     {
-        // return env('header_path');
-
-        $activity = ActivityLog::latest()->get();
+        $activity = ActivityLog::latest()->paginate(05);
         return view('log::log', compact('activity'));
     }
 }

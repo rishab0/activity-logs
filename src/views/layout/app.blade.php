@@ -230,6 +230,11 @@
                         <i class="fa fa-dashboard"></i> Dashboard
                     </a>
                 </li>
+                <li class="nav-item ">
+                    <a href="{{env('APP_URL')}}" target="_blank" class="nav-link">
+                        <i class="fa fa-home"></i> {{env('APP_NAME')}}
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -238,7 +243,7 @@
     <footer class="main-footer">
         <div class="container-fluid">
             <p class="text-muted pull-left">
-                LogReporting - <span class="badge badge-info">version 0.0.1</span>
+                LogReporting - <span class="badge badge-info">version 2.2.2</span>
             </p>
             <p class="text-muted pull-right">
                 Created with <i class="fa fa-heart"></i> Softuvo <sup>&copy;</sup>
