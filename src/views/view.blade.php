@@ -16,11 +16,11 @@
             <div class="row">
 
                 <div class="col-lg-3">
-                    <p class="bold">Type</p>
+                    <p class="bold">Module</p>
                     <p>{{$activity->model}}</p>
                 </div>
                 <div class="col-lg-3">
-                    <p class="bold">class</p>
+                    <p class="bold">Activity</p>
                     <p>{!! $activity->getStatus() !!}</p>
                 </div>
                 <div class="col-lg-3">
@@ -58,15 +58,19 @@
                 </div>
                 <div class="col-lg-3">
                     <p class="bold">URL</p>
-                    <p>{{@$activity->url}}</p>
+                    <p><a href="{{@$activity->url}}" target="_blank">Link to edit</a></p>
                 </div>
                 <div class="col-lg-3">
                     <p class="bold">TimeZone</p>
                     <p>{{$activity->timezone}}</p>
                 </div>
                 <div class="col-lg-3">
-                    <p class="bold">Created At</p>
+                    <p class="bold">Created at</p>
                     <p>{{$activity->created_at}}</p>
+                </div>
+                <div class="col-lg-3">
+                    <p class="bold">Activity by</p>
+                    <p>{{$activity->created_by}}</p>
                 </div>
             </div>
         </main>

@@ -212,6 +212,12 @@
         .badge.badge-env {
             background-color: #6A1B9A;
         }
+        .log_view {
+            cursor: pointer;
+        }
+        .custom_btn {
+            margin-top: 30px !important;
+        }
     </style>
 </head>
 
@@ -243,7 +249,7 @@
     <footer class="main-footer">
         <div class="container-fluid">
             <p class="text-muted pull-left">
-                LogReporting - <span class="badge badge-info">version 2.2.2</span>
+                LogReporting - <span class="badge badge-info">version 3.3.3</span>
             </p>
             <p class="text-muted pull-right">
                 Created with <i class="fa fa-heart"></i> Softuvo <sup>&copy;</sup>

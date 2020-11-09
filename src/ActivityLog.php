@@ -15,7 +15,7 @@ class ActivityLog extends Eloquent
      * @var array
      */
     protected $fillable = [
-        'msz', 'model', 'status', 'ip_address', 'timezone', 'url', 'response', 'ip_country', 'ip_city', 'ip_region', 'ip_lat', 'ip_long',
+        'msz', 'model', 'status', 'ip_address', 'timezone', 'url', 'response', 'ip_country', 'ip_city', 'ip_region', 'ip_lat', 'ip_long','created_by','dateTime'
     ];
 
     public static function add($data)
@@ -36,23 +36,25 @@ class ActivityLog extends Eloquent
             'ip_lat' =>   $ipDetails['ip_lat'],
             'ip_long' =>   $ipDetails['ip_long'],
             'timezone' => date_default_timezone_get(),
+            'created_by' => @$data['created_by'], 
+            'dateTime' => strtotime(date('d-M-Y')),
         ]);
     }
 
     static function getIpdetails($ip)
     {
-        $key = env('SNOOPI_KEY') ?: '860f6b432c6485c105d5352db55b6214';
+        $key = env('SNOOPI_KEY');
         try {
             $json  = file_get_contents('https://api.snoopi.io/' . $ip . '?apikey=' . $key . '');
             $xml = json_decode($json, true);
         } catch (\Exception $ex) {
             $xml = new \stdClass();
         }
-        $activity['ip_country'] = @$xml ?   $xml['CountryName'] : '--';
-        $activity['ip_city'] = @$xml ?   $xml['City'] : '--';
-        $activity['ip_region'] = @$xml ?   $xml['State'] : '--';
-        $activity['ip_lat'] = @$xml ?   $xml['Latitude'] : '--';
-        $activity['ip_long'] = @$xml ?   $xml['Longitude'] : '--';
+        $activity['ip_country'] = empty($xml) ?   $xml['CountryName'] : null;
+        $activity['ip_city'] = empty($xml) ?   $xml['City'] : null;
+        $activity['ip_region'] = empty($xml) ?   $xml['State'] : null;
+        $activity['ip_lat'] = empty($xml) ?   $xml['Latitude'] : null;
+        $activity['ip_long'] = empty($xml) ?   $xml['Longitude'] : null;
         return $activity;
     }
 
@@ -108,4 +110,19 @@ class ActivityLog extends Eloquent
                 break;
         }
     }
+
+    public function getModelAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getCreatedByAttribute($value)
+    {
+        if($value)
+        {
+            return ucfirst($value);
+        }
+        return '---';
+    }
+    
 }
