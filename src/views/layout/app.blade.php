@@ -218,6 +218,109 @@
         .custom_btn {
             margin-top: 30px !important;
         }
+        body,.active_logs {
+            background-color: #efeff4;
+        }
+        .main_block {
+            background-color: #fff;
+            margin: 50px 0 0;
+            border-radius: 4px;
+        }
+        .main_block .page-header {
+            background-color: #404040;
+            color: #fff;
+        }
+        .main_block .page-header h1 {
+            font-size: 32px;
+            padding: 5px 20px;
+        }
+        .log_listing {
+            padding: 30px 20px 10px;
+        }
+        .log_listing form {
+            margin-bottom: 20px;
+        }
+        .action_btn {
+            background-color: #28a745;
+            color: #fff !important;
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 32px;
+        }
+        .view_log .modal-header {
+            background-color: #404040;
+            color: #fff;
+            border-radius: 0;
+        }
+        .view_log .modal-header h2 {
+            font-size: 29px;
+            margin: 0;
+        }
+        .view_log .modal-header button.close {
+            color: #fff;
+            opacity: 1;
+            text-shadow: none;
+            outline: none !important;
+        }
+        .view_log .modal-body .detail_block p {
+            margin-bottom: 0;
+        }
+        .view_log .modal {
+            padding: 0 !important;
+        }
+        .bold {
+            color: #000000;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px !important;
+        }
+        .detail_block .row {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 20px;
+        }
+        .view_log .modal-footer {
+            padding-top: 0;
+            border: none;
+        }
+        .view_log .modal-body {
+            padding-bottom: 0;
+        }
+        .modal-footer .response {
+            color: #fff !important;
+        }
+        .table thead th {
+            white-space: nowrap;
+        }
+        .log_listing .pagination {
+            float: right;
+            padding-top: 20px;
+        }
+        .padding-rt-0{
+            padding-right: 0;
+        }
+        @media only screen and (min-width: 320px) and (max-width: 767px) {
+            .custom_btn {
+                margin-top: 0px !important;
+            }
+            .detail_block .col-lg-3.col-sm-3 {
+                margin-bottom: 15px;
+            }
+            .table td {
+                white-space: nowrap;
+            }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .custom_btn {
+                margin-top: 0px !important;
+            }
+            .table td {
+                white-space: nowrap;
+            }
+        }
     </style>
 </head>
 
@@ -249,10 +352,10 @@
     <footer class="main-footer">
         <div class="container-fluid">
             <p class="text-muted pull-left">
-                LogReporting - <span class="badge badge-info">version 3.3.3</span>
+                LogReporting - <span class="badge badge-info">version 4.4.4</span>
             </p>
             <p class="text-muted pull-right">
-                Created with <i class="fa fa-heart"></i> Softuvo <sup>&copy;</sup>
+                Created with <i class="fa fa-heart"></i> <a href="https://www.softuvo.com/" target="_blank">Softuvo</a>  <sup>&copy;</sup>
             </p>
         </div>
     </footer>
