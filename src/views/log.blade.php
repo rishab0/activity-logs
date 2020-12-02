@@ -94,7 +94,7 @@
                                                 <td>{{ @$log->ip_country ? $log->ip_country . '/' . $log->ip_city . '/' . $log->ip_region : '---' }}
                                                 </td>
                                                 <td>{{ @$log->created_by }}</td>
-                                                <td>{{ @$log->created_at ? date('M d Y',strtotime($log->created_at)) : '--' }}</td>
+                                                <td>{{ @$log->created_at ? date('d-M-Y',strtotime($log->created_at)) : '--' }}</td>
                                                 <td>
                                                     <a data-id="{{ $log->_id }}" class="action_btn log_view">
                                                         <i class="fa fa-eye"></i>
