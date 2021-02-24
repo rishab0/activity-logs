@@ -321,6 +321,36 @@
                 white-space: nowrap;
             }
         }
+        .date-col ul{
+            border-radius: 4px;
+            list-style: none;
+            padding: 0;
+            margin-top: 42px;
+            border: 1px solid rgba(0,0,0,.125);
+        }
+        .date-col ul .date-head {
+            font-size: 16px ;
+            font-weight: 500;
+        }
+        .date-col ul li{
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            background:rgba(0,0,0,.03);
+            padding:12px 22px;
+        }
+        .date-col ul li a{
+            color: #444;
+            text-decoration: none;
+        }
+        .date-col ul li.active{
+            background-color: #007bff;
+        }
+        .date-col ul li.active a{
+            color: #fff;
+        } 
+        .download_btn{
+            float: right;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -335,13 +365,18 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a href="{{url('/activity-log')}}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="fa fa-dashboard"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{env('APP_URL')}}" target="_blank" class="nav-link">
-                        <i class="fa fa-home"></i> {{env('APP_NAME')}}
+                    <a href="{{url('/activity-log')}}" class="nav-link">
+                        <i class="fa fa-archive"></i> Logs
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="{{url('system-log')}}/" class="nav-link">
+                        <i class="fa fa-archive"></i> System log
                     </a>
                 </li>
             </ul>
@@ -352,10 +387,10 @@
     <footer class="main-footer">
         <div class="container-fluid">
             <p class="text-muted pull-left">
-                LogReporting - <span class="badge badge-info">version 4.4.4</span>
+                LogReporting - <span class="badge badge-info">version 8.0.0</span>
             </p>
             <p class="text-muted pull-right">
-                Created with <i class="fa fa-heart"></i> <a href="https://www.softuvo.com/" target="_blank">Softuvo</a>  <sup>&copy;</sup>
+                Created with <i class="fa fa-heart"></i> <a href="https://www.softuvo.com/">Softuvo</a> <sup>&copy;</sup>
             </p>
         </div>
     </footer>
@@ -366,7 +401,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
-   
+
+
+
 </body>
 
 </html>
